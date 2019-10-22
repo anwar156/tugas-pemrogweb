@@ -20,7 +20,7 @@ function register($conn, $post = array()){
     mysqli_query($conn, $query);
 
     // mengembalikkan jumlah baris yang terpengaruhi
-    return mysqli_affected_row($conn)
+    return mysqli_affected_row($conn);
 }
 
 
