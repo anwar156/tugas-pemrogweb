@@ -25,7 +25,7 @@
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./login.html">Login</a></li>
+                    <li><a href="./login.php">Login</a></li>
                     <li><a href="#">Register</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
@@ -103,6 +103,10 @@
                     // Memanggil fungsi register
                     if(register($conn, $post)){
                         $pesan = "Register success!";
+
+                        // memulai session
+                        session_start();
+                        $_SESSION = $post["username"];
 
                         // jika berhasil pindah ke halaman home
                         header("Location: home.html");

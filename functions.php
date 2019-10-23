@@ -23,5 +23,45 @@ function register($conn, $post = array()){
     return mysqli_affected_rows($conn);
 }
 
+function login($conn, $post = array()){
+
+    // query sql
+    $query = sprintf("SELECT user_pass, user_login FROM user 
+        WHERE user_email = '%s' OR user_login = '%s'", $post["username_or_email"], $post["username_or_email"]);
+
+    // execute query
+    $result = mysqli_query($conn, $query);
+
+    // jika email tidak ditemukan
+    if(!mysqli_affected_rows($conn)){
+        echo "User tidak ditemukan";
+
+        return false;
+    }
+    // jika email ditemukan
+    else{
+        
+        // Mengambil data dari sql query
+        $row = array();
+        $row = mysqli_fetch_assoc($result);
+
+        // print_r($row);
+
+        // cek password
+        if(password_verify($post["user_pass"], $row["user_pass"])){
+
+            // start session
+            session_start();
+            $_SESSION = $user["user_login"];
+
+            return true;
+        }else{
+            echo "password salah";
+
+            return false;
+        }
+    }
+}
+
 
 ?>
