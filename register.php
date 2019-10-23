@@ -1,6 +1,6 @@
+<?php require "functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
         <section>
 
             <div class="form-container">
-                <form action="">
+                <form action="#" method="POST">
                     <h1>Register Djogja Event Organizer</h1>
                     <img src="images/server.svg" alt="server graphic" class="server">
 
@@ -70,10 +70,49 @@
                     </div>
 
                     <div class="btn-box">
-                        <button class="btn btn-submit" type="submit">submit</button>
+                        <button class="btn btn-submit" name="register" type="submit">Register</button>
                     </div>
 
                 </form>
+                <?php
+                
+                // Konek ke database
+                $conn = koneksi();
+
+                if(isset($_POST["register"])){
+
+                    // filter input user
+                    $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+                    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+                    $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+                    $pass = null;
+
+                    // cek password dan confirm-password
+                    if($_POST["password"] === $_POST["confirm-password"]){
+                        // password enkripsi dengan hash
+                        $pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
+                    } 
+
+                    $post = array(
+                        "username" => $username,
+                        "user_email" => $email,
+                        "user_pass" => $pass,
+                        "name" => $name
+                    );
+
+                    // Memanggil fungsi register
+                    if(register($conn, $post)){
+                        $pesan = "Register success!";
+
+                        // jika berhasil pindah ke halaman home
+                        header("Location: home.html");
+                    }
+                    else {
+                        $pesan = "Register failed!";
+                    }
+                }
+
+                ?>
             </div>
         </section>
     </div>
@@ -107,7 +146,6 @@
             nav.classList.add('hide-mobile');
             e.preventDefault();
         });
-
     </script>
 </body>
 
