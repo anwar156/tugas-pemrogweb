@@ -1,3 +1,13 @@
+<?php
+
+// Session tidak ada
+session_start();
+if(!isset($_SESSION["username"])){
+    echo '<script language="javascript">alert("Anda Harus Login Dulu!"); document.location="login.php";</script>';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

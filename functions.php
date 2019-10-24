@@ -23,6 +23,26 @@ function register($conn, $post = array()){
     return mysqli_affected_rows($conn);
 }
 
+// Memulai session
+function session_mulai($username){
+    session_start();
+    $_SESSION["username"] = $username;
+
+    header("Location: home.html");
+}
+
+// cek session
+function session_cek(){
+    session_start();
+
+    // user sudah login
+    if(isset($_SESSION["username"])){
+
+        // pindah ke halaman home
+        header("Location: home.html");
+    }
+}
+
 function login($conn, $post = array()){
 
     // query sql
@@ -51,8 +71,7 @@ function login($conn, $post = array()){
         if(password_verify($post["user_pass"], $row["user_pass"])){
 
             // start session
-            session_start();
-            $_SESSION = $user["user_login"];
+            session_mulai($row[user_login]);
 
             return true;
         }else{
@@ -62,6 +81,5 @@ function login($conn, $post = array()){
         }
     }
 }
-
 
 ?>

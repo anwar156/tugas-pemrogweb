@@ -1,4 +1,10 @@
-<?php require "functions.php" ?>
+<?php 
+
+require "functions.php";
+
+session_cek();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,11 +111,7 @@
                         $pesan = "Register success!";
 
                         // memulai session
-                        session_start();
-                        $_SESSION = $post["username"];
-
-                        // jika berhasil pindah ke halaman home
-                        header("Location: home.html");
+                        session_mulai($post["username"]);
                     }
                     else {
                         $pesan = "Register failed!";

@@ -1,4 +1,10 @@
-<?php require "functions.php" ?>
+<?php 
+
+require "functions.php";
+
+session_cek();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,17 +80,8 @@
                         "user_pass" => $user_pass
                     );
 
-                    // Login berhasil
-                    
-                    if(login($conn, $post)){
-                        $pesan = "Login berhasil!";
-
-                        // Pindah tampilan
-                        header("Location: home.html");
-                    }
-                    else{
-                        $pesan = "Login gagal!";
-                    }
+                    // Memanggil fungsi login + memulai session
+                    login($conn, $post);
                 }
                 ?>
             </div>
