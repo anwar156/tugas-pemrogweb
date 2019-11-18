@@ -3,9 +3,9 @@
 function koneksi(){
 
     // koneksi ke database
-    $conn = mysqli_connect("localhost", "clevo", "12345678") or die("Koneksi ke database GAGAL!");
+    $conn = mysqli_connect("localhost", "root", "12345678") or die("Koneksi ke database GAGAL!");
 
-    mysqli_select_db($conn, "djogjaevent") or die("Database salah!");
+    mysqli_select_db($conn, "pemrogweb") or die("Database salah!");
 
     return $conn;
 }
@@ -13,7 +13,7 @@ function koneksi(){
 function register($conn, $post = array()){
     
     // query sql 
-    $query = sprintf("INSERT INTO user (user_login, user_email, user_pass, display_name)
+    $query = sprintf("INSERT INTO user (username, email, password, name)
         VALUES ('%s', '%s', '%s', '%s')", $post["username"], $post["user_email"], $post["user_pass"], $post["name"]);
 
     // execute query
@@ -46,8 +46,8 @@ function session_cek(){
 function login($conn, $post = array()){
 
     // query sql
-    $query = sprintf("SELECT user_pass, user_login FROM user 
-        WHERE user_email = '%s' OR user_login = '%s'", $post["username_or_email"], $post["username_or_email"]);
+    $query = sprintf("SELECT password, id FROM user 
+        WHERE email = '%s' OR username = '%s'", $post["username_or_email"], $post["username_or_email"]);
 
     // execute query
     $result = mysqli_query($conn, $query);
@@ -68,10 +68,10 @@ function login($conn, $post = array()){
         // print_r($row);
 
         // cek password
-        if(password_verify($post["user_pass"], $row["user_pass"])){
+        if(password_verify($post["user_pass"], $row["password"])){
 
             // start session
-            session_mulai($row[user_login]);
+            session_mulai($row[id]);
 
             return true;
         }else{
