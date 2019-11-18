@@ -1,3 +1,10 @@
+<?php 
+
+require "functions.php";
+
+session_cek();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +33,7 @@
                     </li>
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="#">Login</a></li>
-                    <li><a href="./register.html">Register</a></li>
+                    <li><a href="./register.php">Register</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
@@ -35,7 +42,7 @@
         <section>
 
             <div class="form-container">
-                <form action="">
+                <form action="#" method="POST">
                     <h1>Login Djogja Event Organizer</h1>
                     <img src="images/server.svg" alt="server graphic" class="server">
 
@@ -52,10 +59,31 @@
                     </div>
 
                     <div class="btn-box">
-                        <button class="btn btn-submit" type="submit">Login</button>
+                        <button class="btn btn-submit" name="login" type="submit">Login</button>
                     </div>
 
                 </form>
+
+                <?php
+
+                // koneksi ke database
+                $conn = koneksi();
+
+                if(isset($_POST["login"])){
+                    
+                    // filter input user
+                    $username_or_email = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+                    $user_pass = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
+
+                    $post = array(
+                        "username_or_email" => $username_or_email,
+                        "user_pass" => $user_pass
+                    );
+
+                    // Memanggil fungsi login + memulai session
+                    login($conn, $post);
+                }
+                ?>
             </div>
         </section>
     </div>

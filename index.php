@@ -1,3 +1,11 @@
+<?php
+
+require "functions.php";
+
+session_cek();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +32,7 @@
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
                     <li><a href="#">Home</a></li>
-                    <li><a href="./login.html">Login</a></li>
+                    <li><a href="./login.php">Login</a></li>
                     <li><a href="./register.html">Register</a></li>
                     <li><a href="">About</a></li>
                 </ul>
