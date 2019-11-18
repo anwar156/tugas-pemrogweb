@@ -13,7 +13,7 @@ function koneksi(){
 function register($conn, $post = array()){
     
     // query sql 
-    $query = sprintf("INSERT INTO user (user_displayname, user_username, email, password)
+    $query = sprintf("INSERT INTO user (user_displayname, user_username, user_email, user_pass)
         VALUES ('%s', '%s', '%s', '%s')", $post["name"], $post["username"], $post["user_email"], $post["user_pass"]);
 
     // execute query
@@ -28,7 +28,7 @@ function session_mulai($username){
     session_start();
     $_SESSION["username"] = $username;
 
-    header("Location: home.html");
+    header("Location: home.php");
 }
 
 // cek session
@@ -43,7 +43,7 @@ function session_cek(){
     }
 }
 
-// Hapus session untuk log out
+// Hapus session untuk log
 function destroy_session(){
     session_destroy();
 }
