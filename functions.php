@@ -5,7 +5,7 @@ function koneksi(){
     // koneksi ke database
     $conn = mysqli_connect("localhost", "root", "12345678") or die("Koneksi ke database GAGAL!");
 
-    mysqli_select_db($conn, "pemrogweb") or die("Database salah!");
+    mysqli_select_db($conn, "djogjaEvent") or die("Database Error!");
 
     return $conn;
 }
@@ -13,8 +13,8 @@ function koneksi(){
 function register($conn, $post = array()){
     
     // query sql 
-    $query = sprintf("INSERT INTO user (username, email, password, name)
-        VALUES ('%s', '%s', '%s', '%s')", $post["username"], $post["user_email"], $post["user_pass"], $post["name"]);
+    $query = sprintf("INSERT INTO user (user_displayname, user_username, email, password)
+        VALUES ('%s', '%s', '%s', '%s')", $post["name"], $post["username"], $post["user_email"], $post["user_pass"]);
 
     // execute query
     mysqli_query($conn, $query);
@@ -39,8 +39,13 @@ function session_cek(){
     if(isset($_SESSION["username"])){
 
         // pindah ke halaman home
-        header("Location: home.html");
+        header("Location: home.php");
     }
+}
+
+// Hapus session untuk log out
+function destroy_session(){
+    session_destroy();
 }
 
 function login($conn, $post = array()){
