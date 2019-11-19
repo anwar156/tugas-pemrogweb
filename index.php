@@ -19,8 +19,8 @@ session_cek();
 
 <body>
     <div class="container">
-        <header>
-            <img src="images/logo.svg" alt="23andfour logo" class="logo">
+        <header><!-- Ganti Image Logo -->
+            <img src="images/logo.svg" alt="Djogja Event Schedule" class="logo">
 
             <nav>
                 <a href="#" class="hide-desktop">
@@ -32,14 +32,15 @@ session_cek();
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
                     <li><a href="#">Home</a></li>
-                    <li><a href="./login.php">Login</a></li>
-                    <li><a href="./register.php">Register</a></li>
+                    <li><a href="/login.php">Login</a></li>
+                    <li><a href="/register.php">Register</a></li>
                     <li><a href="">About</a></li>
                 </ul>
             </nav>
         </header>
 
         <section>
+        <!-- image -->
             <img src="images/server.svg" alt="server graphic" class="server">
 
             <h1>Djogja Event Schedule</h1>
@@ -54,18 +55,15 @@ session_cek();
             <ul>
                 <li>
                     <img src="images/icon-1.svg" alt="Calendar icon">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore</p>
+                    <p>Displays the schedule of official and non-official events taking place in Yogyakarta and surrounding areas.</p>
                 </li>
                 <li>
-                    <img src="images/icon-2.svg" alt="Calendar icon">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore</p>
+                    <img src="images/icon-2.svg" alt="Pocket icon">
+                    <p>There are free and paid events that can be easily obtained through this website.</p>
                 </li>
                 <li>
-                    <img src="images/icon-3.svg" alt="Calendar icon">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore</p>
+                    <img src="images/icon-3.svg" alt="Handphone icon">
+                    <p>Share your organization's events without spending money and get a lot of visitors.</p>
                 </li>
             </ul>
         </div>
@@ -105,7 +103,7 @@ session_cek();
                 <a href="#">
                     <img src="images/logo-white.svg" class="logo" alt="logo">
                 </a>
-                <p class="address">Melrose Place, 90210<br>USA</p>
+                <p class="address">UGM Yogyakarta<br>Indonesia</p>
                 <ul class="footer-links">
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy Policy</a></li>
