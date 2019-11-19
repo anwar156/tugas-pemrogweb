@@ -12,7 +12,7 @@ session_cek();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register Djogja Event</title>
+    <title>Login Djogja Event</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/form.css">
 </head>
@@ -20,7 +20,7 @@ session_cek();
 <body>
     <div class="container">
         <header>
-            <img src="images/logo.svg" alt="23andfour logo" class="logo">
+            <img src="images/logo.svg" alt="Djogja Event" class="logo">
 
             <nav>
                 <a href="#" class="hide-desktop">
@@ -31,7 +31,7 @@ session_cek();
                     <li id="exit" class="exit-btn hide-desktop">
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./home.php">Home</a></li>
                     <li><a href="#">Login</a></li>
                     <li><a href="./register.php">Register</a></li>
                     <li><a href="#">About</a></li>
@@ -43,7 +43,7 @@ session_cek();
 
             <div class="form-container">
                 <form action="#" method="POST">
-                    <h1>Login Djogja Event Organizer</h1>
+                    <h1>Login Djogja Event</h1>
                     <img src="images/server.svg" alt="server graphic" class="server">
 
                     <div class="group">
@@ -61,6 +61,8 @@ session_cek();
                     <div class="btn-box">
                         <button class="btn btn-submit" name="login" type="submit">Login</button>
                     </div>
+
+                    <p>New to Djogja Event? <a href="./register.php">Sign up now</a></p>
 
                 </form>
 
@@ -91,10 +93,10 @@ session_cek();
     <footer>
         <div class="footer-container">
             <div class="container">
-                <a href="#">
+                <a href="./index.php">
                     <img src="images/logo-white.svg" class="logo" alt="logo">
                 </a>
-                <p class="address">Melrose Place, 90210<br>USA</p>
+                <p class="address">UGM Yogyakarta<br>Indonesia</p>
                 <ul class="footer-links">
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy Policy</a></li>

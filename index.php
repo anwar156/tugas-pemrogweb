@@ -13,14 +13,14 @@ session_cek();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Djogja Event Schedule</title>
+    <title>Djogja Event</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <div class="container">
         <header><!-- Ganti Image Logo -->
-            <img src="images/logo.svg" alt="Djogja Event Schedule" class="logo">
+            <img src="images/logo.svg" alt="Djogja Event" class="logo">
 
             <nav>
                 <a href="#" class="hide-desktop">
@@ -43,7 +43,7 @@ session_cek();
         <!-- image -->
             <img src="images/server.svg" alt="server graphic" class="server">
 
-            <h1>Djogja Event Schedule</h1>
+            <h1>Djogja Event</h1>
             <p class="subhead">Share and search your event.</p>
 
             <img src="images/scroll.svg" alt="scroll down" class="scroll hide-mobile show-desktop">
