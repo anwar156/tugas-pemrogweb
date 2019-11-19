@@ -31,10 +31,10 @@ session_cek();
                     <li id="exit" class="exit-btn hide-desktop">
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="./home.php">Home</a></li>
                     <li><a href="./login.php">Login</a></li>
                     <li><a href="./register.php">Register</a></li>
-                    <li><a href="">About</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
             </nav>
         </header>
@@ -75,6 +75,7 @@ session_cek();
                 <li>
                     <figure>
                         <img src="images/user1.png" alt="User testimonial picture">
+                        <!-- Ganti Tulisan Lorem ipsum dibawah ya -->
                         <blockquote>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas tenetur totam,
                             dolore</blockquote>
                         <figcaption>- Jane Doe</figcaption>
@@ -83,6 +84,7 @@ session_cek();
                 <li>
                     <figure>
                         <img src="images/user2.png" alt="User testimonial picture">
+                        <!-- Ganti Tulisan Lorem ipsum dibawah ya -->
                         <blockquote>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas tenetur totam,
                             dolore</blockquote>
                         <figcaption>- John Doe</figcaption>
@@ -100,7 +102,7 @@ session_cek();
     <footer>
         <div class="footer-container">
             <div class="container">
-                <a href="#">
+                <a href="./home.php">
                     <img src="images/logo-white.svg" class="logo" alt="logo">
                 </a>
                 <p class="address">UGM Yogyakarta<br>Indonesia</p>
