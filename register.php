@@ -30,7 +30,7 @@ session_cek();
                     <li id="exit" class="exit-btn hide-desktop">
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
-                    <li><a href="./index.php">Home</a></li>
+                    <li><a href="./home.php">Home</a></li>
                     <li><a href="./login.php">Login</a></li>
                     <li><a href="#">Register</a></li>
                     <li><a href="#">About</a></li>
