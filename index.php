@@ -32,8 +32,8 @@ session_cek();
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
                     <li><a href="#">Home</a></li>
-                    <li><a href="/login.php">Login</a></li>
-                    <li><a href="/register.php">Register</a></li>
+                    <li><a href="./login.php">Login</a></li>
+                    <li><a href="./register.php">Register</a></li>
                     <li><a href="">About</a></li>
                 </ul>
             </nav>
@@ -94,7 +94,7 @@ session_cek();
 
     <div class="container">
         <h2>Get and share your event!</h2>
-        <a href="#" class="cta">Register Now</a>
+        <a href="./register.php" class="cta">Register Now</a>
     </div>
 
     <footer>
