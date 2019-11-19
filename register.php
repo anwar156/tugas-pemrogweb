@@ -30,7 +30,7 @@ session_cek();
                     <li id="exit" class="exit-btn hide-desktop">
                         <img src="images/exit.svg" alt="exit menu">
                     </li>
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.php">Home</a></li>
                     <li><a href="./login.php">Login</a></li>
                     <li><a href="#">Register</a></li>
                     <li><a href="#">About</a></li>
@@ -42,7 +42,7 @@ session_cek();
 
             <div class="form-container">
                 <form action="#" method="POST">
-                    <h1>Register Djogja Event Organizer</h1>
+                    <h1>Register Djogja Event</h1>
                     <img src="images/server.svg" alt="server graphic" class="server">
 
                     <div class="group">
@@ -126,10 +126,10 @@ session_cek();
     <footer>
         <div class="footer-container">
             <div class="container">
-                <a href="#">
+                <a href="./index.php">
                     <img src="images/logo-white.svg" class="logo" alt="logo">
                 </a>
-                <p class="address">Melrose Place, 90210<br>USA</p>
+                <p class="address">UGM Yogyakarta<br>Indonesia</p>
                 <ul class="footer-links">
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Privacy Policy</a></li>
