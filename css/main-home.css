@@ -2,6 +2,7 @@
 
 body {
     margin: 0;
+    background: #c6c6cc;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -42,11 +43,12 @@ header form input[type=text] {
 
 header form button {
     margin: auto 0;
-    display: inline;
+    padding: 0;
 }
 
 header form button img {
-    width: 17px;
+    width: 15px;
+    height: 1em;
 }
 
 .hide-mobile {
@@ -92,6 +94,25 @@ nav ul li a:hover {
 .exit-btn img {
     width: 15px;
     cursor: pointer;
+}
+
+.new-post {
+    background: white;
+    padding: 0;
+    margin: .5em .3em;
+    border: 2px solid gray;
+}
+
+.new-post form h3 {
+    background: #dddfe2;
+    padding-left: .5em;
+    margin: 0;
+    border-bottom: 2px solid gray;
+}
+
+.new-post form input {
+    margin-left: .5em;
+    width: 90%;
 }
 
 @media only screen and (min-width: 650px){
@@ -144,6 +165,44 @@ nav ul li a:hover {
     nav ul li a:hover {
         background-color: inherit;
     }
+    
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .left-content {
+        float: left;
+        width: 30%;
+        background: green; 
+        padding: 1em 0em;
+    }
+
+    .left-content ul {
+        padding: 0 1em;
+    }
+
+    .left-content ul li img {
+        display: block;
+        max-width: 60%;
+        margin: auto auto;
+        border: 5px solid grey;
+    }
+
+    .middle-content {
+        margin: 0 0;
+        float: left;
+        width: 50%;
+        height: 1000px;
+        background: blueviolet;
+    }
+
+    .right-content {
+        width: 20%;
+        float: left;
+        height: 1000px;
+        background: green;
+    }
 
     @keyframes move {
         from {
@@ -154,10 +213,6 @@ nav ul li a:hover {
         }
     }
 
-    .container {
-        width: 80%;
-        margin: auto;
-    }
 }
 
 @media only screen and (max-width: 1600px){

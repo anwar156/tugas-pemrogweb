@@ -15,7 +15,7 @@ if(!isset($_SESSION["username"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Djogja Event Organizer</title>
+    <title>Djogja Event</title>
     <link rel="stylesheet" href="./css/main-home.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -49,20 +49,30 @@ if(!isset($_SESSION["username"])){
     </div>
 
     <div class="container">
-        <div class="left-content">
+        <div class="left-content hide-mobile show-desktop">
             <ul>
+                <li><img src="./images/Manaka.jpg" alt="Images profile"></li>
                 <li>Home</li>
-                <li>Profil</li>
+                <li>Profile</li>
             </ul>
         </div>
 
-        <div class="right-content">
+        <div class="middle-content">
             <div class="new-post">
-                
+                <form action="#" method="POST">
+                    <h3>New Event</h3>
+                    <input type="text">
+
+                </form>
             </div>
             <div class="containEvent">
 
             </div>
+
+        </div>
+
+        <div class="right-content hide-mobile show-desktop">
+
 
         </div>
     </div>
