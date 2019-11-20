@@ -82,7 +82,7 @@ session_cek();
                         "user_pass" => $user_pass
                     );
 
-                    // Memanggil fungsi login + memulai session
+                    // Memanggil fungsi login + memulai session di dalam function login
                     login($conn, $post);
                 }
                 ?>

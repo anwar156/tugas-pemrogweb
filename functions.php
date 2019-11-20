@@ -51,18 +51,19 @@ function destroy_session(){
 function login($conn, $post = array()){
 
     // query sql
-    $query = sprintf("SELECT password, id FROM user 
-        WHERE email = '%s' OR username = '%s'", $post["username_or_email"], $post["username_or_email"]);
+    $query = sprintf("SELECT user_pass, user_username FROM user 
+        WHERE user_email = '%s' OR user_username = '%s'", $post["username_or_email"], $post["username_or_email"]);
 
     // execute query
     $result = mysqli_query($conn, $query);
 
     // jika email tidak ditemukan
     if(!mysqli_affected_rows($conn)){
-        echo "User tidak ditemukan";
+        echo "Username atau Email belum terdaftar!";
 
         return false;
     }
+    
     // jika email ditemukan
     else{
         
@@ -70,13 +71,11 @@ function login($conn, $post = array()){
         $row = array();
         $row = mysqli_fetch_assoc($result);
 
-        // print_r($row);
-
         // cek password
-        if(password_verify($post["user_pass"], $row["password"])){
+        if(password_verify($post["user_pass"], $row["user_pass"])){
 
             // start session
-            session_mulai($row[id]);
+            session_mulai($row["user_username"]);
 
             return true;
         }else{
