@@ -61,8 +61,30 @@ if(!isset($_SESSION["username"])){
             <div class="new-post">
                 <form action="#" method="POST">
                     <h3>New Event</h3>
-                    <input type="text">
+                    <table>
+                        <tr>
+                            <td>Tittle</td>
+                            <td>: <input type="text" name="" id=""></td>
+                        </tr>
+                        <tr>
+                            <td>Description your Event</td>
+                            <td>: <input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Location</td>
+                            <td>: <input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Event Date</td>
+                            <td>: <input type="date" id="date"><input type="time" id="time"></td>
+                        </tr>
+                        <tr>
+                            <td>Maximum Patricipations</td>
+                            <td>: <input type="number"></td>
+                        </tr>
+                    </table>
 
+                    <button>Post</button>
                 </form>
             </div>
             <div class="containEvent">

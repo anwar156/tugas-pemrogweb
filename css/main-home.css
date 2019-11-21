@@ -41,11 +41,6 @@ header form input[type=text] {
     width: 80%;
 }
 
-header form button {
-    margin: auto 0;
-    padding: 0;
-}
-
 header form button img {
     width: 15px;
     height: 1em;
@@ -98,6 +93,7 @@ nav ul li a:hover {
 
 .new-post {
     background: white;
+    text-align: left;
     padding: 0;
     margin: .5em .3em;
     border: 2px solid gray;
@@ -108,11 +104,6 @@ nav ul li a:hover {
     padding-left: .5em;
     margin: 0;
     border-bottom: 2px solid gray;
-}
-
-.new-post form input {
-    margin-left: .5em;
-    width: 90%;
 }
 
 @media only screen and (min-width: 650px){
