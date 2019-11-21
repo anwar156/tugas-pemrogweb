@@ -17,7 +17,6 @@ if(!isset($_SESSION["username"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Djogja Event</title>
     <link rel="stylesheet" href="./css/main-home.css">
-    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <div class="container-header">
@@ -52,8 +51,8 @@ if(!isset($_SESSION["username"])){
         <div class="left-content hide-mobile show-desktop">
             <ul>
                 <li><img src="./images/Manaka.jpg" alt="Images profile"></li>
-                <li>Home</li>
-                <li>Profile</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
             </ul>
         </div>
 
@@ -83,8 +82,9 @@ if(!isset($_SESSION["username"])){
                             <td>: <input type="number"></td>
                         </tr>
                     </table>
-
-                    <button>Post</button>
+                    <div class="btn-box">
+                        <button class="btn btn-submit" name="Post" type="submit">Post</button>
+                    </div>
                 </form>
             </div>
             <div class="containEvent">
@@ -94,8 +94,11 @@ if(!isset($_SESSION["username"])){
         </div>
 
         <div class="right-content hide-mobile show-desktop">
-
-
+            <p>UGM Yogyakarta Indonesia</p>
+            <ul class="footer-links">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
         </div>
     </div>
 
