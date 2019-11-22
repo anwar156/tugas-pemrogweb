@@ -93,4 +93,27 @@ function login($conn, $post = array()){
     }
 }
 
+// function insert new event
+function insert_event($conn, $post = array()) {
+    // get id from username
+    $query = sprintf("SELECT user_id FROM user 
+        WHERE user_username = '%s'", $_SESSION["username"]);
+    $result = mysqli_query($conn, $query);
+    
+    // Mengambil data mysql
+    $row = array();
+    $row = mysqli_fetch_assoc($result);
+
+    // query sql 
+    $query = sprintf("INSERT INTO event (event_author, event_tittle, event_desc, event_location, event_datetime, event_participant)
+        VALUES ('%s', '%s', '%s', '%s', '%s', '%s')", $row["user_id"], $post["tittle"], $post["desc"], 
+        $post["location"], $post["datetime"], $post["participant"]);
+
+    // execute query
+    mysqli_query($conn, $query);
+
+    // mengembalikkan jumlah baris yang terpengaruhi
+    return mysqli_affected_rows($conn);
+}
+
 ?>

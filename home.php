@@ -69,29 +69,50 @@ if(isset($_GET['logout'])){
                     <table>
                         <tr>
                             <td>Tittle</td>
-                            <td>: <input type="text" name="" id=""></td>
+                            <td>: <input type="text" name="tittle"></td>
                         </tr>
                         <tr>
                             <td>Description your Event</td>
-                            <td>: <input type="text"></td>
+                            <td>: <input type="text" name="desc"></td>
                         </tr>
                         <tr>
                             <td>Location</td>
-                            <td>: <input type="text"></td>
+                            <td>: <input type="text" name="location"></td>
                         </tr>
                         <tr>
                             <td>Event Date</td>
-                            <td>: <input type="date" id="date"><input type="time" id="time"></td>
+                            <td>: <input type="date" name="date" id="date"><input type="time" name="time" id="time"></td>
                         </tr>
                         <tr>
                             <td>Maximum Patricipations</td>
-                            <td>: <input type="number"></td>
+                            <td>: <input type="number" name="participant"></td>
                         </tr>
                     </table>
                     <div class="btn-box">
-                        <button class="btn btn-submit" name="Post" type="submit">Post</button>
+                        <button class="btn btn-submit" name="post" type="submit">Post</button>
                     </div>
                 </form>
+                
+                <?php
+
+                if(isset($_POST['post'])){
+                    // Format time mysql
+                    $time = $_POST['date']." ".$_POST['time'];
+                    // echo $time;
+
+                    $post = array(
+                        "tittle" => $_POST['tittle'],
+                        "desc" => $_POST['desc'],
+                        "location" => $_POST['location'],
+                        "desc" => $_POST['desc'],
+                        "datetime" => $time,
+                        "participant" => $_POST['participant']
+                    );
+                
+                    insert_event(koneksi(), $post);
+                }
+
+                ?>
             </div>
             <div class="containEvent">
 
