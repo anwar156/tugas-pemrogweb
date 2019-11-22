@@ -250,6 +250,16 @@ ul.footer-links li a {
         padding-bottom: .7em;
     }
 
+    .name {
+        padding: .5em 1em 0 1em;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .username {
+        padding: 0 1em .2em 1em;
+    }
+
     .left-content ul li a {
         text-decoration: none;
         color: black;

@@ -93,6 +93,18 @@ function login($conn, $post = array()){
     }
 }
 
+function show_user_attribute($conn){
+    $query = sprintf("SELECT user_displayname, user_username, user_profile FROM user
+        WHERE user_username = '%s'", $_SESSION["username"]);
+
+    $result = mysqli_query($conn, $query);
+
+    $row = array();
+    $row = mysqli_fetch_assoc($result);
+
+    return $row;
+}
+
 // function insert new event
 function insert_event($conn, $post = array()) {
     // get id from username

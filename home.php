@@ -12,6 +12,9 @@ if(isset($_GET['logout'])){
     destroy_session();
 }
 
+$value = array();
+$value = show_user_attribute(koneksi());
+
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +60,8 @@ if(isset($_GET['logout'])){
         <div class="left-content hide-mobile show-desktop">
             <ul>
                 <li><img src="./images/Manaka.jpg" alt="Images profile"></li>
+                <li class="name"><?php echo $value["user_displayname"]; ?></li>
+                <li class="username"><?php echo $value["user_username"]; ?></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Profile</a></li>
             </ul>
