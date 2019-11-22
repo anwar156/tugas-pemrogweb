@@ -35,7 +35,7 @@ function session_mulai($username){
 function session_cek(){
     session_start();
 
-    // user sudah login
+    // apabila session ada
     if(isset($_SESSION["username"])){
 
         // pindah ke halaman home

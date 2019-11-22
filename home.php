@@ -5,7 +5,7 @@ require_once "functions.php";
 // Session tidak ada
 session_start();
 if(!isset($_SESSION["username"])){
-    echo '<script language="javascript">alert("Anda Harus Login Dulu!"); document.location="login.php";</script>';
+    echo '<script>alert("Anda Harus Login Dulu!"); document.location="login.php";</script>';
 }
 
 if(isset($_GET['logout'])){
