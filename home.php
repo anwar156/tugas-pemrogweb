@@ -1,9 +1,15 @@
 <?php
 
+require_once "functions.php";
+
 // Session tidak ada
 session_start();
 if(!isset($_SESSION["username"])){
     echo '<script language="javascript">alert("Anda Harus Login Dulu!"); document.location="login.php";</script>';
+}
+
+if(isset($_GET['logout'])){
+    destroy_session();
 }
 
 ?>
@@ -27,7 +33,7 @@ if(!isset($_SESSION["username"])){
             <form action="#" method="GET">
                 <input type="text" name="search" placeholder="Search">
                 <button><img src="./images/search.svg" alt="Search"></button>
-            </form>            
+            </form>
             
             <nav>
                 <a href="#" class="hide-desktop">
@@ -41,7 +47,7 @@ if(!isset($_SESSION["username"])){
 
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="?logout=true">Logout</a></li>
                 </ul>
             </nav>
         </header>

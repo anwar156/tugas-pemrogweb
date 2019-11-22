@@ -45,7 +45,14 @@ function session_cek(){
 
 // Hapus session untuk log
 function destroy_session(){
-    session_destroy();
+    // remove dan destroy variable session
+    session_unset();
+    $status = session_destroy();
+
+    // Apabila session kosong
+    if($status){
+        header("Location: index.php");
+    }
 }
 
 function login($conn, $post = array()){
