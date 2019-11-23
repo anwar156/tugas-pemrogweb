@@ -43,6 +43,9 @@ while ($row = mysqli_fetch_array($result)) {
         ?>
 
         <div class="event-desc"><?php echo $row['descEvent']; ?></div>
+        <div>Location : <?php echo $row['locationEvent']; ?></div>
+        <div>Event Date : <?php echo $row['timeEvent']; ?></div>
+        <div>Maximum participant : <?php echo $row['participantEvent']; ?></div>
         <div class="btn-box">
             <button class="btn btn-submit" name="Post" type="submit">Join Event</button>
         </div>
