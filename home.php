@@ -26,6 +26,8 @@ $value = show_user_attribute(koneksi());
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Djogja Event</title>
     <link rel="stylesheet" href="./css/main-home.css">
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/jquery-post.js"></script>
 </head>
 <body>
     <div class="container-header">
@@ -74,23 +76,23 @@ $value = show_user_attribute(koneksi());
                     <table>
                         <tr>
                             <td>Tittle</td>
-                            <td>: <input type="text" name="tittle"></td>
+                            <td>: <input type="text" name="tittle" required="required"></td>
                         </tr>
                         <tr>
                             <td>Description your Event</td>
-                            <td>: <input type="text" name="desc"></td>
+                            <td>: <input type="text" name="desc" required="required"></td>
                         </tr>
                         <tr>
                             <td>Location</td>
-                            <td>: <input type="text" name="location"></td>
+                            <td>: <input type="text" name="location" required="required"></td>
                         </tr>
                         <tr>
                             <td>Event Date</td>
-                            <td>: <input type="date" name="date" id="date"><input type="time" name="time" id="time"></td>
+                            <td>: <input type="date" name="date" id="date" required="required"><input type="time" name="time" id="time" required="required"></td>
                         </tr>
                         <tr>
                             <td>Maximum Patricipations</td>
-                            <td>: <input type="number" name="participant"></td>
+                            <td>: <input type="number" name="participant" required="required"></td>
                         </tr>
                     </table>
                     <div class="btn-box">
@@ -108,7 +110,7 @@ $value = show_user_attribute(koneksi());
                     $post = array(
                         "tittle" => $_POST['tittle'],
                         "desc" => $_POST['desc'],
-                        "location" => $_POST['location'],
+                        "location" => $_POST['locatifacebookson'],
                         "desc" => $_POST['desc'],
                         "datetime" => $time,
                         "participant" => $_POST['participant']
@@ -119,7 +121,7 @@ $value = show_user_attribute(koneksi());
 
                 ?>
             </div>
-            <?php require_once "getEvent.php"; ?>
+            <?php require_once "getEventNative.php"; ?>
         </div>
 
         <div class="right-content hide-mobile show-desktop">

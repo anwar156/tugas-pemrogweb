@@ -5,7 +5,6 @@ require_once "functions.php";
 $conn = koneksi();
 
 // row per page
-$row = $_POST['row'];
 $rowperpage = 3;
 
 // counting total post
@@ -18,7 +17,7 @@ $allcount = $allcount_fetch['allcount'];
 $query = "SELECT event.event_id as idEvent, user.user_displayname as nameCreator, user.user_profile as imageUser, event.event_post as datepost, 
     event.event_tittle as tittleEvent, event.event_desc as descEvent, event.event_location as locationEvent,
     event.event_datetime as timeEvent, event.event_participant as participantEvent, event.event_image as imageEvent
-    FROM event inner join user on event.event_author = user.user_id ORDER BY datepost, timeEvent DESC LIMIT $row, $rowperpage";
+    FROM event inner join user on event.event_author = user.user_id ORDER BY datepost, timeEvent DESC LIMIT 0, $rowperpage";
 $result = mysqli_query($conn, $query);
 
 while ($row = mysqli_fetch_array($result)) {
@@ -53,3 +52,19 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 ?>
+<input type="hidden" id="row" value="0">
+<input type="hidden" id="all" value="<?php echo $allcount; ?>">
+<!--
+<div class="contain-event">
+    <div class="head">
+        <img src="./images/Manaka.jpg" alt="Event Created">
+        <label>Nama Pembuat Event</label><br>
+        <label class="small">Waktu Membuat</label>
+    </div>
+    <div class="tittle">Tittle</div>
+    <img src="./images/Manaka.jpg" alt="">
+    <div class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora similique, eos libero error ipsam corporis, ut consectetur amet aliquid tempore explicabo. Voluptatem obcaecati cupiditate maiores nam incidunt eum esse odio!</div>
+    <div class="btn-box">
+        <button class="btn btn-submit" name="Post" type="submit">Join Event</button>
+    </div>
+</div> -->
