@@ -119,20 +119,7 @@ $value = show_user_attribute(koneksi());
 
                 ?>
             </div>
-            <div class="contain-event">
-                <div class="head">
-                    <img src="./images/Manaka.jpg" alt="Event Created">
-                    <label>Nama Pembuat Event</label><br>
-                    <label class="small">Waktu Membuat</label>
-                </div>
-                <div class="tittle">Tittle</div>
-                <img src="./images/Manaka.jpg" alt="">
-                <div class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora similique, eos libero error ipsam corporis, ut consectetur amet aliquid tempore explicabo. Voluptatem obcaecati cupiditate maiores nam incidunt eum esse odio!</div>
-                <div class="btn-box">
-                    <button class="btn btn-submit" name="Post" type="submit">Join Event</button>
-                </div>
-            </div>
-
+            <?php require_once "getEvent.php"; ?>
         </div>
 
         <div class="right-content hide-mobile show-desktop">
