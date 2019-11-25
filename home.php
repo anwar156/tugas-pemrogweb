@@ -35,7 +35,7 @@ $value = show_user_attribute(koneksi());
             
             <img src="./images/logo.svg" alt="Djogja Event" class="logo">
 
-            <form action="#" method="GET">
+            <form action="./search.php" method="GET">
                 <input type="text" name="search" placeholder="Search">
                 <button><img src="./images/search.svg" alt="Search"></button>
             </form>
