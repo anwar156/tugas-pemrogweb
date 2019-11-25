@@ -35,7 +35,7 @@
 
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="./home.php?logout=true">Logout</a></li>
                 </ul>
             </nav>
         </header>

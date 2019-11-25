@@ -35,7 +35,7 @@
 
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Profile</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="./home.php?logout=true">Logout</a></li>
                 </ul>
             </nav>
         </header>
@@ -60,6 +60,7 @@
             $conn = koneksi();
             session_start();
             $userId = mysqli_fetch_array(mysqli_query($conn, sprintf("SELECT user_id FROM user WHERE user_username = '%s'", $_SESSION['username'])));
+            
             $query = sprintf("INSERT INTO joinEvent (join_keterangan, join_event, join_user)
                 VALUES ('%s', '%s', '%s')", $_POST['keterangan'], $_POST['idEvent'],  $userId['user_id']);
 
