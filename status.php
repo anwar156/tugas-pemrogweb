@@ -53,15 +53,31 @@
         <div class="middle-content">
             
             <div class="contain-event">
-                <form action="./status.php" method="POST">
-                    <h2>Join Event</h2>
-                    <label>Masukkan Keterangan</label><br><br>
-                    <input type="text" name="keterangan" placeholder="Masukkan Pesan">
-                    <input type="hidden" name="idEvent" value="<?php echo $_GET['idEvent']; ?>">
-                    <div class="btn-box">
-                        <button class="btn btn-submit" name="JOIN" type="submit">Continue Join</button>
-                    </div>
-                </form>
+            <?php
+
+            require_once "functions.php";
+
+            $conn = koneksi();
+            session_start();
+            $userId = mysqli_fetch_array(mysqli_query($conn, sprintf("SELECT user_id FROM user WHERE user_username = '%s'", $_SESSION['username'])));
+            $query = sprintf("INSERT INTO joinEvent (join_keterangan, join_event, join_user)
+                VALUES ('%s', '%s', '%s')", $_POST['keterangan'], $_POST['idEvent'],  $userId['user_id']);
+
+            mysqli_query($conn, $query);
+
+            if(mysqli_affected_rows($conn)){
+                ?><h2>Selamat Anda berhasil bergabung.</h2><?php
+            }
+            else {
+                ?><h2>Gagal join event</h2><?php
+            }
+            
+
+            ?>
+                
+                <div class="btn-box">
+                    <a href="./home.php"><button class="btn btn-submit" name="JOIN" type="submit">Back Home</button></a>
+                </div>
             </div>
 
         </div>

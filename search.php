@@ -81,9 +81,12 @@
                     <div>Event Date : <?php echo $row['timeEvent']; ?></div>
                     <div>Maximum participant : <?php echo $row['participantEvent']; ?></div>
                     <div class="event-desc"><?php echo $row['descEvent']; ?></div>
-                    <div class="btn-box">
-                        <button class="btn btn-submit" name="Post" type="submit">Join Event</button>
-                    </div>
+                    <form action="./join.php" method="GET">
+                        <input type="hidden" name="idEvent" value="<?php echo $row['idEvent']; ?>">
+                        <div class="btn-box">
+                            <button class="btn btn-submit" name="Post" type="submit">Join Event</button>
+                        </div>
+                    </form>
                 </div>
 
                 <?php
